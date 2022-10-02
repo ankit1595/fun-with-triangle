@@ -17,22 +17,25 @@ const IsTriangle = () => {
       ...prevInputs,
       angle1: Number(e.target.value),
     }));
+    clearMessage();
   }
   function angle2Input(e) {
     setAngleInputs((prevInputs) => ({
       ...prevInputs,
       angle2: Number(e.target.value),
     }));
+    clearMessage();
   }
   function angle3Input(e) {
     setAngleInputs((prevInputs) => ({
       ...prevInputs,
       angle3: Number(e.target.value),
     }));
+    clearMessage();
   }
   function checkIsTriangle() {
-    setErrorMessage("");
-    setOutput("");
+    clearMessage();
+
     let sumOfAngles = angle1 + angle2 + angle3;
     console.log(sumOfAngles);
     if (angle1 < 0 || angle2 < 0 || angle3 < 0) {
@@ -42,12 +45,15 @@ const IsTriangle = () => {
       if (sumOfAngles === 180) {
         setOutput("Yes! we can call it a Triangle");
       } else {
-        setOutput("Not a valid Triangle");
+        setOutput("Nah! not a valid Triangle");
       }
     }
   }
   function resetForm() {
     setAngleInputs(initalAngleInputs);
+    clearMessage();
+  }
+  function clearMessage() {
     setErrorMessage("");
     setOutput("");
   }
