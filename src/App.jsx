@@ -1,10 +1,12 @@
 import "./App.css";
 import IsTriangle from "./components/IsTriangle";
+import TriangleQuiz from "./components/TriangleQuiz";
 
 function App() {
   return (
     <div className="App">
-      <IsTriangle />
+      {/* <IsTriangle /> */}
+      <TriangleQuiz />
     </div>
   );
 }
