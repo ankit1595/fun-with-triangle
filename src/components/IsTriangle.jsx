@@ -37,7 +37,7 @@ const IsTriangle = () => {
     clearMessage();
 
     let sumOfAngles = angle1 + angle2 + angle3;
-    console.log(sumOfAngles);
+
     if (angle1 < 0 || angle2 < 0 || angle3 < 0) {
       setErrorMessage("Invalid inputs! Try Again");
       return;
@@ -49,10 +49,12 @@ const IsTriangle = () => {
       }
     }
   }
+
   function resetForm() {
     setAngleInputs(initalAngleInputs);
     clearMessage();
   }
+  
   function clearMessage() {
     setErrorMessage("");
     setOutput("");
