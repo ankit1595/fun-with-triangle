@@ -33,6 +33,7 @@ const TriangleQuiz = () => {
 
   return (
     <div>
+        <h1>Triangle Quiz</h1>
       <form className="quiz-form" onSubmit={submitForm}>
         <div>
           <p>
