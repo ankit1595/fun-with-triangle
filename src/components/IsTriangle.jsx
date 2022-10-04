@@ -69,7 +69,7 @@ const IsTriangle = () => {
       <input type="number" id="angle2" onChange={angle2Input} value={angle2} />
       <label htmlFor="angle3">Angle 3: </label>
       <input type="number" id="angle3" onChange={angle3Input} value={angle3} />
-      <button onClick={checkIsTriangle}>IsTriangle?</button>
+      <button onClick={checkIsTriangle}>Is Triangle?</button>
       <button onClick={resetForm}>Reset</button>
       <div style={{ color: errorMessage && "red" }}>
         {output}

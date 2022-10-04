@@ -14,14 +14,12 @@ const Hypotenuse = () => {
   }
   function calculateHypotenuse() {
     clearMessage();
-    console.log(sides);
     const { base, height } = sides;
     if (base < 0 || height < 0) {
       setErrorMessage("Invalid inputs! Try Again");
       return;
     }
     const hypotenuse = Math.sqrt(base ** 2 + height ** 2).toFixed(2);
-    console.log(hypotenuse);
     setOutput(`The length of hypotenuse is ${hypotenuse}`);
   }
 
