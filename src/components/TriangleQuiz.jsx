@@ -5,15 +5,6 @@ const correctAnswers = [
   "one right angle",
   "right angled",
   "Equilateral triangle",
-  //   "right angled",
-  //   "one right angle",
-  //   "12, 16, 20",
-  //   "Equilateral triangle",
-  //   "100°",
-  //   "30°",
-  //   "a + b + c",
-  //   "no",
-  //   "45°",
 ];
 const TriangleQuiz = () => {
   const [score, setScore] = useState(0);
@@ -33,14 +24,14 @@ const TriangleQuiz = () => {
 
   return (
     <div>
-        <h1>Triangle Quiz</h1>
+        <h2>Triangle Quiz</h2>
       <form className="quiz-form" onSubmit={submitForm}>
         <div>
           <p>
             What is the third angle for the triangle where angle1 = 45° and
             angle2 = 45°?
           </p>
-          <label>
+          <label className="radio">
             <input type="radio" value="45" name="question1" />
             45°
           </label>

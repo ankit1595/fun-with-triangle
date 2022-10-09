@@ -30,7 +30,7 @@ const Hypotenuse = () => {
 
   return (
     <div>
-      <h1>Calculate Hypotenuse of a triangle</h1>
+      <h2>Calculate Hypotenuse of a triangle</h2>
       <label htmlFor="base">Enter base value (a) = </label>
       <input
         type="number"

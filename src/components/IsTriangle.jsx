@@ -62,7 +62,7 @@ const IsTriangle = () => {
 
   return (
     <div>
-      <h1>Is Triangle?</h1>
+      <h2>Is Triangle?</h2>
       <label htmlFor="angle1">Angle 1: </label>
       <input type="number" id="angle1" onChange={angle1Input} value={angle1} />
       <label htmlFor="angle2">Angle 2: </label>
@@ -70,7 +70,15 @@ const IsTriangle = () => {
       <label htmlFor="angle3">Angle 3: </label>
       <input type="number" id="angle3" onChange={angle3Input} value={angle3} />
       <button onClick={checkIsTriangle}>Is Triangle?</button>
-      <button onClick={resetForm}>Reset</button>
+      <button
+        style={{
+          backgroundColor: "#dc3545",
+          color: "white",
+          borderColor: "#dc3545",
+        }}
+        onClick={resetForm}>
+        Reset
+      </button>
       <div style={{ color: errorMessage && "red" }}>
         {output}
         {errorMessage}
