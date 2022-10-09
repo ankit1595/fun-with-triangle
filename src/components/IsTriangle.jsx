@@ -9,6 +9,7 @@ const IsTriangle = () => {
   const [angleInputs, setAngleInputs] = useState(initalAngleInputs);
   const [output, setOutput] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [textColor, setTextColor] = useState("")
 
   const { angle1, angle2, angle3 } = angleInputs;
 
@@ -38,14 +39,16 @@ const IsTriangle = () => {
 
     let sumOfAngles = angle1 + angle2 + angle3;
 
-    if (angle1 < 0 || angle2 < 0 || angle3 < 0) {
+    if (angle1 <= 0 || angle2 <= 0 || angle3 <= 0) {
       setErrorMessage("Invalid inputs! Try Again");
       return;
     } else {
       if (sumOfAngles === 180) {
         setOutput("Yes! we can call it a Triangle");
+        setTextColor("#28a745");
       } else {
         setOutput("Nah! not a valid Triangle");
+        setTextColor("#dc3545");
       }
     }
   }
@@ -79,7 +82,7 @@ const IsTriangle = () => {
         onClick={resetForm}>
         Reset
       </button>
-      <div style={{ color: errorMessage && "red" }}>
+      <div className="output" style={{ color: errorMessage ? "red" : textColor }}>
         {output}
         {errorMessage}
       </div>

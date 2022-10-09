@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 
 const Hypotenuse = () => {
-  const [sides, setSides] = useState({ base: "", height: "" });
+  const initialSides = { base: "", height: "" };
+  const [sides, setSides] = useState(initialSides);
   const [output, setOutput] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [textColor, setTextColor] = useState("");
 
   function handleInputs(e) {
     setSides({
@@ -15,17 +17,23 @@ const Hypotenuse = () => {
   function calculateHypotenuse() {
     clearMessage();
     const { base, height } = sides;
-    if (base < 0 || height < 0) {
+    if (base <= 0 || height <= 0) {
       setErrorMessage("Invalid inputs! Try Again");
       return;
     }
     const hypotenuse = Math.sqrt(base ** 2 + height ** 2).toFixed(2);
     setOutput(`The length of hypotenuse is ${hypotenuse}`);
+    setTextColor("#28a745");
   }
 
   function clearMessage() {
     setErrorMessage("");
     setOutput("");
+  }
+
+  function resetForm() {
+    setSides(initialSides);
+    clearMessage();
   }
 
   return (
@@ -48,7 +56,18 @@ const Hypotenuse = () => {
         value={sides.height}
       />
       <button onClick={calculateHypotenuse}>Calculate hypotenuse</button>
-      <div style={{ color: errorMessage && "red" }}>
+      <button
+        style={{
+          backgroundColor: "#dc3545",
+          color: "white",
+          borderColor: "#dc3545",
+        }}
+        onClick={resetForm}>
+        Reset
+      </button>
+      <div
+        className="output"
+        style={{ color: errorMessage ? "red" : textColor }}>
         {output}
         {errorMessage}
       </div>
